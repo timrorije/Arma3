@@ -1,0 +1,1 @@
+//player addAction["Open Cam Viewer", {execVM "openDialog.sqf"}];
