@@ -13,56 +13,56 @@ SetupRadio = {
 					[
 						[239,35,35,1],
 						"90.0 FM",
-						"90=> %UNIT_NAME:",
+						"90 ([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						2
 					],
 					[
 						[244,208,102,1],
 						"80.0 FM",
-						"80=> %UNIT_NAME:",
+						"80 ([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						3
 					],
 					[
 						[239,35,35,1],
 						"70.0 FM",
-						"70",
+						"70 ([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						4
 					],
 					[
 						[53,47,248,1],
 						"60.0 FM",
-						"60=> %UNIT_NAME:",
+						"60 ([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						5
 					],
 					[
 						[115,251,219,1],
 						"50.0 FM",
-						"50=> %UNIT_NAME:",
+						"50([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						6
 					],
 					[
 						[251,163,115,1],
 						"40.0 FM",
-						"40=> %UNIT_NAME:",
+						"40([%UNIT_GRP_NAME] %UNIT_NAME) ",
 						[],
 						7
 					],
 					[
 						[154,115,251,1],
 						"30.0 FM",
-						"30=> %UNIT_NAME:",
+						"30([%UNIT_GRP_NAME] %UNIT_NAME)",
 						[],
 						8
 					],
 					[
 						[21,16,13,1],
 						"20.0 FM",
-						"20=> %UNIT_NAME: ",
+						"20([%UNIT_GRP_NAME] %UNIT_NAME)",
 						[],
 						9
 					]
