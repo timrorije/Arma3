@@ -1,11 +1,5 @@
 SetupRadio = {
 
-	if("ItemRadio" in assignedItems player)then{
-	hint "You already have a commisioned radio. If you want a special one, please get rid of yours.";
-	}else{
-		hint "Put a brand new radio in your inventory. Ready to go."; 
-		player addItem "ItemRadio";
-		player assignItem "ItemRadio";
 		if("ItemRadio" in assignedItems player)then{
 				[typeOf player, 1, ["ACE_SelfActions", "COMS"]] call ace_interact_menu_fnc_removeActionFromClass;
 				RadioChannels = [];
@@ -83,14 +77,14 @@ SetupRadio = {
 				params["_Id"];
 				_return = "";
 				switch(_Id) do{
-					case 2:{ _return = "90.0";};
-					case 3:{_return = "80.0";};
-					case 4:{_return = "70.0";};
-					case 5:{_return = "60.0";};
-					case 6:{_return = "50.0";};
-					case 7:{_return = "40.0";};
-					case 8:{_return = "30.0";};
-					case 9:{_return = "20.0";};
+					case 2:{ _return = 90.0;};
+					case 3:{_return = 80.0;};
+					case 4:{_return = 70.0;};
+					case 5:{_return = 60.0;};
+					case 6:{_return = 50.0;};
+					case 7:{_return = 40.0;};
+					case 8:{_return = 30.0;};
+					case 9:{_return = 20.0;};
 				};
 
 					_return;
@@ -99,14 +93,14 @@ SetupRadio = {
 				params["_Name"];
 				_return = 9;
 				switch(_Name)do{
-					case "90.0":{ _return = 2};
-					case "80.0":{_return = 3};
-					case "70.0":{_return = 4};
-					case "60.0":{_return = 5};
-					case "50.0":{_return = 6};
-					case "40.0":{_return = 7};
-					case "30.0":{_return = 8};
-					case "20.0":{_return = 9};
+					case 90.0:{ _return = 2};
+					case 80.0:{_return = 3};
+					case 70.0:{_return = 4};
+					case 60.0:{_return = 5};
+					case 50.0:{_return = 6};
+					case 40.0:{_return = 7};
+					case 30.0:{_return = 8};
+					case 20.0:{_return = 9};
 					};
 					_return;
 			};
@@ -122,12 +116,15 @@ SetupRadio = {
 					_exists = setCurrentChannel (_id +5);
 					if(_exists isEqualTo true)then{
 						_id radioChannelRemove [this];
-						systemChat ("Signed out of Channel" + str _FMName);
 						setCurrentChannel 0;
+						colorText[] = {0,0,1,1};
+						systemChat ("Signed out of Channel " + str _FMName);
+						
 					}else{
 						
 						_id radioChannelAdd [this];
-						systemChat ("Signed in to Channel" + str _FMName);
+						setCurrentChannel (_id +5);
+						systemChat ("Signed in to Channel " + str _FMName);
 					}
 				},
 				{("ItemRadio" in assignedItems player)},
@@ -136,17 +133,10 @@ SetupRadio = {
 				[typeOf player, 1, ["ACE_SelfActions","COMS"], myaction] call ace_interact_menu_fnc_addActionToClass;
 			} forEach RadioChannels;
 
-			"Incstuctions on COMS" hintC ["Open your ACE self interaction Menu", 
-			"Browse to a certain Frequency on 'COMS'=> '<frequency>' " ,
-			"Now use your '<' and '>' to browse to the channel you want to speak in.",
-			"To Unassign:",
-			"Simply select the channel in the ACE interaction menu again"];
 			
-		}else{
-			hint "You have no room in your inventory to put a Radio in."
-		};
+		}		
 	};
-};
 
 systemChat "Initialising";
 []remoteExec["SetupRadio", player];
+
