@@ -1,0 +1,23 @@
+class CfgSounds
+{
+	sounds[] = {};
+	class soundRadioSendingClick
+	{
+		name = "soundRadioSendingClick";
+		sound[] = {"@A3\missions_f\data\sounds\click.wss", 6, 1};
+		titles[] = {};
+	};
+	class soundRadioSendingStart
+	{
+		name = "soundRadioSendingStart";
+		sound[] = {"\Sounds\StaticSendingStart.ogg", 10, 1};
+		titles[] = {};
+	};
+	class incomingSound
+	{
+		name = "soundRadioSendingStart";
+		sound[] = {"\Sounds\BeepComingIn.ogg", 6, 1};
+		titles[] = {};
+	};
+};
+
